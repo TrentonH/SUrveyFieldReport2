@@ -14,6 +14,7 @@
 		BBA718A31F4F3D4F0008A089 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBA718A11F4F3D4F0008A089 /* LaunchScreen.storyboard */; };
 		BBA718AE1F4F3D4F0008A089 /* SurveyFieldReport2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA718AD1F4F3D4F0008A089 /* SurveyFieldReport2Tests.swift */; };
 		BBA718B91F4F3D4F0008A089 /* SurveyFieldReport2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA718B81F4F3D4F0008A089 /* SurveyFieldReport2UITests.swift */; };
+		BBA718C71F4F44A50008A089 /* logo.JPG in Resources */ = {isa = PBXBuildFile; fileRef = BBA718C61F4F44A50008A089 /* logo.JPG */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		BBA718B41F4F3D4F0008A089 /* SurveyFieldReport2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SurveyFieldReport2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBA718B81F4F3D4F0008A089 /* SurveyFieldReport2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyFieldReport2UITests.swift; sourceTree = "<group>"; };
 		BBA718BA1F4F3D4F0008A089 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBA718C61F4F44A50008A089 /* logo.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = logo.JPG; path = ../logo.JPG; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				BBA718AC1F4F3D4F0008A089 /* SurveyFieldReport2Tests */,
 				BBA718B71F4F3D4F0008A089 /* SurveyFieldReport2UITests */,
 				BBA718961F4F3D4F0008A089 /* Products */,
+				BBA718C61F4F44A50008A089 /* logo.JPG */,
 			);
 			sourceTree = "<group>";
 		};
@@ -235,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBA718C71F4F44A50008A089 /* logo.JPG in Resources */,
 				BBA718A31F4F3D4F0008A089 /* LaunchScreen.storyboard in Resources */,
 				BBA718A01F4F3D4F0008A089 /* Assets.xcassets in Resources */,
 				BBA7189E1F4F3D4F0008A089 /* Main.storyboard in Resources */,
