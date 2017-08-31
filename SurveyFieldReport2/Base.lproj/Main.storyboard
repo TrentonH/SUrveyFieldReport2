@@ -211,7 +211,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="RGSSetPerPlotPlan"/>
                                             </switch>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rough Grade Stakes, Other See Comments:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwa-J7-BYs">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rough Grade Stakes, Other, See Comments:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwa-J7-BYs">
                                                 <rect key="frame" x="8" y="1102" width="343" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -349,6 +349,9 @@
                                                 <state key="normal" title="Reset">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="ResetBA:" destination="BYZ-38-t0r" eventType="touchUpInside" id="smx-Z9-rBF"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yw6-hp-RKb">
                                                 <rect key="frame" x="96" y="1941" width="50" height="30"/>
@@ -392,6 +395,34 @@
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="2000"/>
+                    <connections>
+                        <outlet property="AddressI" destination="qA8-Fx-chT" id="gKp-Kj-azD"/>
+                        <outlet property="BlockI" destination="hwU-U6-c8E" id="LHd-yW-9OI"/>
+                        <outlet property="BuilderI" destination="Rcc-Fh-u9m" id="8b5-L5-pZ6"/>
+                        <outlet property="CommentsI" destination="P35-pw-uqw" id="x6W-xq-glb"/>
+                        <outlet property="DateB" destination="4JE-BS-8S1" id="Xe9-b7-W8b"/>
+                        <outlet property="EmailI" destination="luT-Ks-DP9" id="5Ji-KS-Z3z"/>
+                        <outlet property="FFCFSC" destination="4fi-PY-yAp" id="JXH-xX-XBT"/>
+                        <outlet property="FFCOSC" destination="CkX-x8-UeO" id="tDQ-lb-i15"/>
+                        <outlet property="FFCPPPP" destination="n1I-lf-2ic" id="tGd-9x-COC"/>
+                        <outlet property="FilingI" destination="kPZ-e7-upJ" id="JI0-VK-ziK"/>
+                        <outlet property="GSFDNMC" destination="voM-cf-tHX" id="lOo-AZ-csf"/>
+                        <outlet property="GSFGF" destination="gBM-mW-l1E" id="i2K-Th-t9o"/>
+                        <outlet property="GSOSC" destination="EMa-Ft-ele" id="sOd-TD-lP2"/>
+                        <outlet property="GSPSSFG" destination="I0y-Re-gHh" id="AT6-rW-LDP"/>
+                        <outlet property="HSOSC" destination="HQ1-G3-9BT" id="3Fv-wo-hTe"/>
+                        <outlet property="HSSPPP" destination="duu-ie-MOR" id="62O-Ou-j5e"/>
+                        <outlet property="HSUTSLNC" destination="Fgk-FW-Qh4" id="Rys-YT-umB"/>
+                        <outlet property="ISFNC" destination="64q-Le-GSs" id="URi-Fp-fpi"/>
+                        <outlet property="ISOSC" destination="XTB-Bd-RcM" id="vcM-4q-fCp"/>
+                        <outlet property="ISSSFR" destination="Six-jb-VGM" id="c2X-Ws-3T4"/>
+                        <outlet property="LotI" destination="LLl-Vq-CxK" id="U5Y-pE-rym"/>
+                        <outlet property="RGSOSC" destination="L7a-de-o8Q" id="hCd-AL-RII"/>
+                        <outlet property="RGSSPPP" destination="ltc-Bm-wmx" id="wYL-g2-qR6"/>
+                        <outlet property="ResetB" destination="C1l-Nj-xI4" id="hnn-Th-ckb"/>
+                        <outlet property="SubdivisionI" destination="nkI-Ux-OMx" id="6e6-aa-G2q"/>
+                        <outlet property="SubmitB" destination="Yw6-hp-RKb" id="p3z-JA-Mq6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
