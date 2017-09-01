@@ -40,6 +40,31 @@ class ViewController: UIViewController {
     
     
     @IBAction func ResetBA(_ sender: Any) {
+        LotI.text = ""
+        BlockI.text = ""
+        BuilderI.text = ""
+        EmailI.text = ""
+        SubdivisionI.text = ""
+        FilingI.text = ""
+        AddressI.text = ""
+        HSSPPP.setOn(false, animated: true)
+        HSUTSLNC.setOn(false, animated: true)
+        HSOSC.setOn(false, animated: true)
+        FFCFSC.setOn(false, animated: true)
+        FFCOSC.setOn(false, animated: true)
+        FFCPPPP.setOn(false, animated: true)
+        RGSOSC.setOn(false, animated: true)
+        RGSSPPP.setOn(false, animated: true)
+        ISFNC.setOn(false, animated: true)
+        ISOSC.setOn(false, animated: true)
+        ISSSFR.setOn(false, animated: true)
+        GSFGF.setOn(false, animated: true)
+        GSOSC.setOn(false, animated: true)
+        GSFDNMC.setOn(false, animated: true)
+        GSPSSFG.setOn(false, animated: true)
+        CommentsI.text = ""
+        //still need to reset the date to doday
+        DateB.setDate(NSDate() as Date, animated: false)
         
         
     }
