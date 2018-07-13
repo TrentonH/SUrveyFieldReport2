@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MessageUI
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate, MFMailComposeViewControllerDelegate {
     
     
     @IBOutlet weak var SubmitB: UIButton!
@@ -38,6 +39,95 @@ class ViewController: UIViewController {
     @IBOutlet weak var GSOSC: UISwitch!
     @IBOutlet weak var CommentsI: UITextView!
     
+    @IBAction func SubmitEmail(_ sender: Any) {
+        let SubjectText = "Aztec Survey Field Report"
+        
+        
+        //var MessageBody = "test"
+        var MessageBody = "lot = " + LotI.text! + "\n Block = " +
+            BlockI.text! + "\n Builder = " + BuilderI.text! +
+            "\n Subdivision = " + SubdivisionI.text! + "\n Filing = " +
+            FilingI.text! + "\n Address " + AddressI.text! + "\n comments = " +
+            CommentsI.text!
+        
+        if(HSSPPP.isOn)
+        {
+        MessageBody += "\n House Staked per plot plan"
+        }
+        if (HSUTSLNC.isOn)
+        {
+            MessageBody += "\n House Stake, unable to stake , lot not Clear"
+        }
+        if (HSOSC.isOn)
+        {
+            MessageBody += "\n House Stake, other, see comments "
+        }
+        if (FFCPPPP.isOn)
+        {
+            MessageBody += "\n Foundation Form Check, passed per plot plan"
+        }
+        if (FFCFSC.isOn)
+        {
+            MessageBody += "\n Foundation Form Check, faild, see comments"
+        }
+        if (FFCOSC.isOn)
+        {
+            MessageBody += "\n Foundation Form Check, other, see comments "
+        }
+        if (RGSSPPP.isOn)
+        {
+            MessageBody += "\n Rough Grade Stakes, set per plot plan"
+        }
+        if (RGSOSC.isOn)
+        {
+            MessageBody += "\n Rough Grade Stakes, other, see comments"
+        }
+        if (ISSSFR.isOn)
+        {
+            MessageBody += "\n Improvement Survey, see sketch for revisions"
+        }
+        if (ISFNC.isOn)
+        {
+            MessageBody += "\n Improvement Survey, flatwork not compleated"
+        }
+        if (ISOSC.isOn)
+        {
+            MessageBody += "\n Imorovement Survey, other see comments"
+        }
+        if (GSPSSFG.isOn)
+        {
+            MessageBody += "\n Grading Survey, passed, see sketch for grades"
+        }
+        if (GSFGF.isOn)
+        {
+            MessageBody += "\n Grading Survey, faild, grading/flatwork"
+        }
+        if (GSFDNMC.isOn)
+        {
+            MessageBody += "\n  Grading Survey, faild, does not meet criteria"
+        }
+        if (GSOSC.isOn)
+        {
+            MessageBody += "\n  Grading Survey, other, see Comments"
+        }
+        
+        
+        
+        let mc: MFMailComposeViewController = MFMailComposeViewController()
+        mc.mailComposeDelegate = self
+        mc.setSubject(SubjectText)
+        mc.setMessageBody(MessageBody, isHTML: false)
+        mc.setToRecipients([EmailI.text!])
+        
+        self.present(mc, animated: true, completion: nil)
+        
+        //UIApplication.shared.open(URL(string:("mailto:" + EmailI.text!))! as URL, options: [:], completionHandler: nil)
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+   self.dismiss(animated: true, completion: nil)
+        
+    }
     
     @IBAction func ResetBA(_ sender: Any) {
         LotI.text = ""
@@ -72,14 +162,50 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        self.BuilderI.delegate = self
+        self.EmailI.delegate = self
+        self.SubdivisionI.delegate = self
+        self.LotI.delegate = self
+        self.BlockI.delegate = self
+        self.FilingI.delegate = self
+        self.AddressI.delegate = self
+        
+
     }
     
 
-    override func didReceiveMemoryWarning() {
+   override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        //Dispose of any resources that can be recreated.
     }
-
+    //hide the keyboard when user touches outside keyboard 
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    //presses return key
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        BuilderI.resignFirstResponder()
+        EmailI.resignFirstResponder()
+        SubdivisionI.resignFirstResponder()
+        LotI.resignFirstResponder()
+        BlockI.resignFirstResponder()
+        FilingI.resignFirstResponder()
+        AddressI.resignFirstResponder()
+        
+        return (true)
+    }
+    
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) ->Bool {
+        if text == "\n"{
+            CommentsI.resignFirstResponder()
+            return false
+        }
+        return true
+        
+    }
+    
 
 }
 
