@@ -42,9 +42,12 @@ class ViewController: UIViewController, UITextFieldDelegate, MFMailComposeViewCo
     @IBAction func SubmitEmail(_ sender: Any) {
         let SubjectText = "Aztec Survey Field Report"
         
+        let dateFormater = DateFormatter()
+        dateFormater.dateFormat = "MM-dd-yyy HH:mm"
+        let dateString = dateFormater.string(from: DateB.date)
         
         //var MessageBody = "test"
-        var MessageBody = "lot = " + LotI.text! + "\n Block = " +
+        var MessageBody = dateString + "\nlot = " + LotI.text! + "\n Block = " +
             BlockI.text! + "\n Builder = " + BuilderI.text! +
             "\n Subdivision = " + SubdivisionI.text! + "\n Filing = " +
             FilingI.text! + "\n Address " + AddressI.text! + "\n comments = " +
@@ -111,12 +114,13 @@ class ViewController: UIViewController, UITextFieldDelegate, MFMailComposeViewCo
             MessageBody += "\n  Grading Survey, other, see Comments"
         }
         
-        
+        let cc = "trentonwhamilton@gmail.com"
         
         let mc: MFMailComposeViewController = MFMailComposeViewController()
         mc.mailComposeDelegate = self
         mc.setSubject(SubjectText)
         mc.setMessageBody(MessageBody, isHTML: false)
+        mc.setCcRecipients([cc])
         mc.setToRecipients([EmailI.text!])
         
         self.present(mc, animated: true, completion: nil)
@@ -170,6 +174,7 @@ class ViewController: UIViewController, UITextFieldDelegate, MFMailComposeViewCo
         self.BlockI.delegate = self
         self.FilingI.delegate = self
         self.AddressI.delegate = self
+        self.CommentsI.delegate = self as? UITextViewDelegate
         
 
     }
@@ -193,6 +198,7 @@ class ViewController: UIViewController, UITextFieldDelegate, MFMailComposeViewCo
         BlockI.resignFirstResponder()
         FilingI.resignFirstResponder()
         AddressI.resignFirstResponder()
+        CommentsI.resignFirstResponder()
         
         return (true)
     }
